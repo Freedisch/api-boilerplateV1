@@ -8,7 +8,7 @@ router.get("/product", (req, res) => {
   res.json({ message: "product" });
 });
 
-router.get("/produc/:id", (req, res) => {});
+router.get("/product/:id", (req, res) => {});
 router.post("/product", (req, res) => {});
 router.put("/product/:id", (req, res) => {});
 router.delete("/product/:id", (req, res) => {});
