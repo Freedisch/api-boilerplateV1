@@ -1,6 +1,12 @@
 import { body } from "express-validator/src/middlewares/validation-chain-builders";
 import { validator } from "./modules/validation";
 import { Router } from "express";
+import {
+  createProduct,
+  deleteProduct,
+  getProduct,
+  updateProduct,
+} from "./handlers/product";
 const router = Router();
 
 /**
@@ -10,14 +16,10 @@ router.get("/product", (req, res) => {
   res.json({ message: "product" });
 });
 
-router.get("/product/:id", (req, res) => {});
-router.post("/product", (req, res) => {});
-router.put(
-  "/product/:id",
-  [body("name").isString, validator],
-  (req, res) => {}
-);
-router.delete("/product/:id", (req, res) => {});
+router.get("/product/:id", getProduct);
+router.post("/product", createProduct);
+router.put("/product/:id", [body("name").isString, validator], updateProduct);
+router.delete("/product/:id", deleteProduct);
 
 /**
  * Update
