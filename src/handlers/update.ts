@@ -1,4 +1,3 @@
-import { isDataView } from "util/types";
 import prisma from "../db";
 
 //GET Updates
@@ -30,7 +29,7 @@ const Update = async (req, res) => {
   const update = await prisma.update.update({
     where: {
       id: req.params.id,
-      productId: req.product.id,
+      // productId: req.product.id,
     },
     data: {
       title: req.body.title,
@@ -47,7 +46,7 @@ const deleteUpdate = (req, res) => {
   const deleted = prisma.update.delete({
     where: {
       id: req.params.id,
-      productId: req.product.id,
+      // productId: req.product.id,
     },
   });
 };

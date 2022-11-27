@@ -4,6 +4,7 @@ import { Router } from "express";
 import {
   createProduct,
   deleteProduct,
+  getOneProduct,
   getProduct,
   updateProduct,
 } from "./handlers/product";
@@ -16,7 +17,8 @@ router.get("/product", (req, res) => {
   res.json({ message: "product" });
 });
 
-router.get("/product/:id", getProduct);
+router.get("/product/", getProduct);
+router.get("/product/:id", getOneProduct);
 router.post("/product", createProduct);
 router.put("/product/:id", [body("name").isString, validator], updateProduct);
 router.delete("/product/:id", deleteProduct);
