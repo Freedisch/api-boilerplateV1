@@ -8,29 +8,33 @@ import {
   getProduct,
   updateProduct,
 } from "./handlers/product";
+import {
+  createUpdate,
+  deleteUpdate,
+  getOneUpdate,
+  getUpdate,
+  Update,
+} from "./handlers/update";
 const router = Router();
 
 /**
  * Product
  */
-router.get("/product", (req, res) => {
-  res.json({ message: "product" });
-});
 
 router.get("/product/", getProduct);
 router.get("/product/:id", getOneProduct);
-router.post("/product", createProduct);
+router.post("/product", [body("name").isString(), validator], createProduct);
 router.put("/product/:id", [body("name").isString, validator], updateProduct);
 router.delete("/product/:id", deleteProduct);
 
 /**
  * Update
  */
-router.get("/update", (req, res) => {});
-router.get("/update/:id", (req, res) => {});
-router.post("/update", (req, res) => {});
-router.put("/update/:id", (req, res) => {});
-router.delete("/update/:id", (req, res) => {});
+router.get("/update", getUpdate);
+router.get("/update/:id", getOneUpdate);
+router.post("/update", createUpdate);
+router.put("/update/:id", Update);
+router.delete("/update/:id", deleteUpdate);
 
 /**
  * UpdatePoint

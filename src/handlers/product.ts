@@ -10,7 +10,7 @@ export const getProduct = async (req, res) => {
       product: true,
     },
   });
-  res.json({ data: user.product });
+  res.json({ data: user });
 };
 
 //GET a single product
@@ -48,6 +48,7 @@ export const updateProduct = async (req, res) => {
       name: req.body.name,
     },
   });
+  res.json({ data: product });
 };
 
 //Delete product
