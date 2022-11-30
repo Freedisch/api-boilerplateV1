@@ -45,4 +45,10 @@ router.post("/updatepoint", (req, res) => {});
 router.put("/updatepoint/:id", (req, res) => {});
 router.delete("/updatepoint/:id", (req, res) => {});
 
+//Error handling
+router.use((err, req, res, next) => {
+  console.log(err);
+  res.json({ message: "router" });
+});
+
 export default router;
