@@ -1,5 +1,3 @@
-import { renameSync } from "fs";
-import { nextTick } from "process";
 import prisma from "../db";
 import { hashPassword, createJWT, comparePasswords } from "../modules/auth";
 
