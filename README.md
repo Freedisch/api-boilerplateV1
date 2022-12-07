@@ -50,13 +50,13 @@ Run migrations
 Build the project
 
 ```bash
-  npm build
+  npm run build
 ```
 
 Run the sever
 
 ```bash
-  npm start
+  npm run start
 ```
 
 ## Running Tests
