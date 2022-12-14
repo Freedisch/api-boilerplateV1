@@ -2,7 +2,7 @@
 
 ## A fully functional EXAMPLE project written in Typescript showing how to create a REST API, with an authentification service and Unit-test
 
-This project is an example that was built along with a Youtube series showing how to use Prisma. Every part of this project is sample code which shows how to do the following:
+Every part of this project is sample code which shows how to do the following:
 
 - Create a custom with server with Typescript using Express
 - Create a single REST API that preform CRUD operations on the differents models.
