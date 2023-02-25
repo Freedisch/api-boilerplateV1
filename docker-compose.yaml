@@ -7,18 +7,21 @@ services:
         - 8000:8000
       volumes:
         - .:/usr/src/app
+      environments:
+        - DATABASE_URL=mongodb://mongodb:27017
+        - JWT_SECRET=hhfhfjdhjdhfjfjfjfhfjfjdx
       depends_on:
-        - mongodb
+        - postgres
     
-    mongodb:
-      container_name: mongodb
-      image: mongo:latest
+    postgres:
+      container_name: postgres
+      image: postgres:latest
       restart: always
       ports:
-        - 2717:27017
+        - 5432:5432
       volumes:
-        - mongodb:/data/db
+        - ./db-data/:/var/lib/postgresql/data/
 
 volumes:
-  mongodb: {}
+  postgres: {}
 
